@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [isActive, setIsActive] = useState(false);
@@ -8,28 +9,28 @@ function Nav() {
 
   return (
     <div>
-      <div className="flex justify-between items-center max-w-[1200px] mx-auto p-4 montserrat_font font-bold text-xs absolute left-0 right-0 mt-8">
+      <div className="z-40 flex justify-between items-center max-w-[1200px] mx-auto p-4 montserrat_font font-bold text-xs absolute left-0 right-0 mt-8">
         <div className="lg:flex lg:gap-12 lg:items-center hidden">
-          <a href="#">
+          <Link to="/">
             <img src="https://websitedemos.net/food-blogger-04/wp-content/uploads/sites/793/2021/03/food-blogger-site-logo.svg" />
-          </a>
+          </Link>
 
           <div className="flex gap-4 items-center">
-            <a href="#" className="text-[#be7c68]">
+            <Link to="/" className="text-[#be7c68]">
               HOME
-            </a>
-            <a href="#" className="hover:text-[#be7c68]">
+            </Link>
+            <Link to="/About" className="hover:text-[#be7c68]">
               ABOUT
-            </a>
+            </Link>
             <a href="#" className="hover:text-[#be7c68]">
               REVIEWS
             </a>
             <a href="#" className="hover:text-[#be7c68]">
               VIDEOS
             </a>
-            <a href="#" className="hover:text-[#be7c68]">
+            <Link to="/Contact" className="hover:text-[#be7c68]">
               CONTACT
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -83,15 +84,11 @@ function Nav() {
         </div>
 
         <div className="lg:hidden flex justify-between items-center absolute left-0 right-0 mt-8">
-          <a href="#">
+          <Link to="/">
             <img src="https://websitedemos.net/food-blogger-04/wp-content/uploads/sites/793/2021/03/food-blogger-site-logo.svg" />
-          </a>
+          </Link>
 
-          <a
-            className="bg-[#be7c68] p-4 rounded-full"
-            href="#"
-            onClick={mobileKliked}
-          >
+          <a className="bg-[#be7c68] p-4 rounded-full" onClick={mobileKliked}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="36px"
@@ -104,10 +101,11 @@ function Nav() {
           </a>
         </div>
       </div>
+      
       <div className={isActive ? "" : "hidden"}>
         <div className="fixed top-0 z-10 h-screen w-[100%] text-center montserrat_font font-normal text-3xl bg-white flex flex-col gap-16 items-center justify-center">
           <div className="absolute top-0 right-0 p-8">
-            <a href="#" onClick={mobileKliked}>
+            <a onClick={mobileKliked}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="36px"
@@ -120,21 +118,21 @@ function Nav() {
             </a>
           </div>
 
-          <a href="#" className="hover:text-[#be7c68]">
+          <Link to="/" className="text-[#be7c68]">
             HOME
-          </a>
-          <a href="#" className="hover:text-[#be7c68]">
+          </Link>
+          <Link to="/About" className="hover:text-[#be7c68]">
             ABOUT
-          </a>
+          </Link>
           <a href="#" className="hover:text-[#be7c68]">
             REVIEWS
           </a>
           <a href="#" className="hover:text-[#be7c68]">
             VIDEOS
           </a>
-          <a href="#" className="hover:text-[#be7c68]">
+          <Link to="/Contact" className="hover:text-[#be7c68]">
             CONTACT
-          </a>
+          </Link>
         </div>
       </div>
     </div>

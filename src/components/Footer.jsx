@@ -1,29 +1,31 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <div>
       <div className="bg-[#F5F5F5] pt-20 pb-8">
         <div className="flex flex-col gap-16 max-w-[1200px] mx-auto p-4 montserrat_font font-normal text-sm">
           <div className="flex flex-col justify-between items-center gap-8 lg:flex-row">
-            <a href="#">
+            <Link to="/">
               <img src="https://websitedemos.net/food-blogger-04/wp-content/uploads/sites/793/2021/03/food-blogger-site-logo.svg" />
-            </a>
+            </Link>
 
             <div className="flex lg:gap-8 gap-4 items-center">
-              <a href="#" className="hover:text-[#be7c68]">
+              <Link to="/" className="hover:text-[#be7c68]">
                 HOME
-              </a>
-              <a href="#" className="hover:text-[#be7c68]">
+              </Link>
+              <Link to="/About" className="hover:text-[#be7c68]">
                 ABOUT
-              </a>
+              </Link>
               <a href="#" className="hover:text-[#be7c68]">
                 REVIEWS
               </a>
               <a href="#" className="hover:text-[#be7c68]">
                 VIDEOS
               </a>
-              <a href="#" className="hover:text-[#be7c68]">
+              <Link to="/Contact" className="hover:text-[#be7c68]">
                 CONTACT
-              </a>
+              </Link>
             </div>
 
             <div className="flex gap-8 items-center">
